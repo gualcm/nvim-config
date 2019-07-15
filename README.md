@@ -2,7 +2,7 @@
 * node
 * yarn
 
-## To install dependencies in vim:
+## To install plugins in vim:
 ``` bash
 :PlugInstall
 ```
