@@ -11,9 +11,9 @@ set expandtab
 set shiftwidth=3
 set softtabstop=3
 set number
-set mouse=a
-set wildmenu                 
-set autoread                  
+set mouse=nv
+set wildmenu
+set autoread
 set laststatus=1
 set hidden
 set completeopt=menuone,noselect
@@ -50,6 +50,7 @@ call plug#end()
 " ***********************************************
 let mapleader = "\<Space>"
 nnoremap <leader>so :source ~/.config/nvim/init.vim<cr>
+map <leader>c "*y
 command WQ wq
 command Wq wq
 command W w
@@ -82,10 +83,6 @@ map <Up> <Nop>
 map <Down> <Nop>
 map <Left> <Nop>
 map <Right> <Nop>
-noremap! <Up> <Nop>
-noremap! <Down> <Nop>
-noremap! <Left> <Nop>
-noremap! <Right> <Nop>
 " remove highlight
 nnoremap <leader>nh :noh<CR>
 " window resizing
