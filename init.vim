@@ -1,112 +1,65 @@
 source $HOME/.config/nvim/searchblink.vim
 
-" ***********************************************
 " ************** NVIM SETTINGS ******************
-" ***********************************************
-syntax on
+set hidden
+set shiftwidth=2
+set softtabstop=2
 set ignorecase
 set smartcase
-set background=dark
-set expandtab
-set shiftwidth=3
-set softtabstop=3
 set number
-set mouse=nv
-set wildmenu
-set autoread
-set laststatus=1
-set hidden
-set completeopt=menuone,noselect
-set updatetime=250
-autocmd BufEnter * :syntax sync fromstart
-autocmd CursorHold * silent call CocActionAsync('highlight')
+set expandtab
+set updatetime=200
 
-" ***********************************************
-" ***************** PLUGINS *********************
-" ***********************************************
-call plug#begin('~/.config/nvim/plugged')
-Plug 'w0rp/ale'
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-Plug 'sheerun/vim-polyglot'
-Plug 'ianks/vim-tsx'
-Plug 'leafgarland/typescript-vim'
-Plug 'jparise/vim-graphql'
-Plug 'alvan/vim-closetag'
-Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'airblade/vim-gitgutter'
-Plug 'ap/vim-buftabline'
-Plug 'ryanoasis/vim-devicons'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'hashrocket/vim-macdown'
-" Plug 'Lokaltog/vim-monotone'
-call plug#end()
-
-" ***********************************************
 " ***************** BINDINGS ********************
-" ***********************************************
 let mapleader = "\<Space>"
-nnoremap <leader>so :source ~/.config/nvim/init.vim<cr>
-map <leader>c "*y
+" we dumb
 command WQ wq
 command Wq wq
 command W w
 command Q q
-" buffers
-nmap <Leader>1 <Plug>BufTabLine.Go(1)
-nmap <Leader>2 <Plug>BufTabLine.Go(2)
-nmap <Leader>3 <Plug>BufTabLine.Go(3)
-nmap <Leader>4 <Plug>BufTabLine.Go(4)
-nmap <Leader>5 <Plug>BufTabLine.Go(5)
-nmap <Leader>6 <Plug>BufTabLine.Go(6)
-nmap <Leader>7 <Plug>BufTabLine.Go(7)
-nmap <Leader>8 <Plug>BufTabLine.Go(8)
-nmap <Leader>9 <Plug>BufTabLine.Go(9)
-nmap <Leader>0 <Plug>BufTabLine.Go(10)
-nnoremap <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
+map <leader>c "*y
 " tab navigation
-nnoremap <Leader>t1 1gt
-nnoremap <Leader>t2 2gt
-nnoremap <Leader>t3 3gt
+nnoremap <Leader>tn :tabnext<CR>
+nnoremap <Leader>tp :tabprev<CR>
+nnoremap <Leader>1 1gt
+nnoremap <Leader>2 2gt
+nnoremap <Leader>3 3gt
+nnoremap <Leader>4 4gt
+nnoremap <Leader>5 5gt
 " split navigation
 nnoremap <C-j> <C-W><C-j>
 nnoremap <C-h> <C-W><C-h>
 nnoremap <C-k> <C-W><C-k>
 nnoremap <C-l> <C-W><C-l>
-" nerdtree
-nnoremap <Leader>tr :NERDTreeToggle<CR>
-" disable arrows
-map <Up> <Nop>
-map <Down> <Nop>
-map <Left> <Nop>
-map <Right> <Nop>
-" remove highlight
-nnoremap <leader>nh :noh<CR>
+nnoremap <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 " window resizing
 nnoremap <leader>ws :resize -10<CR>
 nnoremap <leader>wt :resize +10<CR>
 nnoremap <leader>ww :vertical resize +20<CR>
 nnoremap <leader>wn :vertical resize -20<CR>
+" remove highlight
+nnoremap <leader>nh :noh<CR>
 " error/warning navigation
-nmap <silent> <leader>an :ALENext<cr>
-nmap <silent> <leader>ap :ALEPrevious<cr>
-nmap <silent> <leader>ag <Plug>(coc-definition)
-nmap <silent> <leader>af <Plug>(coc-codeaction)
-nmap <silent> <leader>al :lopen<CR>
-nmap <silent> <leader>ad :ALEDetail<cr>
 nmap <silent> <leader>ah :call <SID>show_documentation()<CR>
+nmap <silent> <leader>al :lopen<CR>
+nmap <silent> <leader>an <Plug>(coc-diagnostic-next)
+nmap <silent> <leader>ap <Plug>(coc-diagnostic-prev)
+nmap <silent> <leader>ag <Plug>(coc-definition)
+nmap <silent> <leader>ar <Plug>(coc-references)
+" prettier (coc-prettier)
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+" coc-yank
+nnoremap <silent> <leader>p  :<C-u>CocList -A --normal yank<cr>
+" markdown
+nmap <silent> <leader>mp <Plug>MarkdownPreviewToggle
+" nerdtree
+nnoremap <Leader>tr :NERDTreeToggle<CR>
+nnoremap <Leader>fr :NERDTreeFind<CR>
+" ctrlp
+nnoremap <C-b> :CtrlPBuffer<CR>
 
-" ***********************************************
-" ************** PLUGIN SETTINGS ****************
-" ***********************************************
-" vim-closetag
-let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.js,*.jsx,*.tsx"
-
-" coc
-let g:coc_global_extensions = ['coc-tsserver', 'coc-css', 'coc-html', 'coc-yank']
+" ***************** PLUGINS ********************
+let g:coc_global_extensions = ['coc-css', 'coc-html', 'coc-yank', 'coc-eslint', 'coc-prettier']
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -115,28 +68,29 @@ function! s:show_documentation()
   endif
 endfunction
 
-
-" ctrlp
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-
-" NERDTree
+" nerdree
 let g:NERDTreeIgnore=['node_modules$[[dir]]']
 
-" ALE Linter
-let g:ale_sign_warning = '●'
-let g:ale_fix_on_save = 1
-let g:ale_linters_explicit = 1
-let g:ale_fixers = {
-\   'typescript': ['prettier'],
-\   'javascript': ['prettier'],
-\   'json': ['prettier'],
-\}
-" Do not lint or fix minified files.
-let g:ale_pattern_options = {
-\ '\.min\.js$': {'ale_linters': [], 'ale_fixers': []},
-\ '\.min\.css$': {'ale_linters': [], 'ale_fixers': []},
-\}
+" ctrlp
+let g:ctrlp_by_filename=1
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+" silver searcher
+let g:ag_working_path_mode="r"
 
-" buftabline
-let g:buftabline_indicators = 1 " Para que muestre qué files se han modificado
-let g:buftabline_numbers = 2
+" plug
+call plug#begin('~/.config/nvim/plugged')
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'sheerun/vim-polyglot'
+Plug 'alvan/vim-closetag'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'airblade/vim-gitgutter'
+Plug 'rking/ag.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+call plug#end()

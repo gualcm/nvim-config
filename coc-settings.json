@@ -1,5 +1,14 @@
 {
-   "coc.preferences.diagnostic.displayByAle": true,
-   "typescript.suggestionActions.enabled": false,
-   "javascript.suggestionActions.enabled": false
+  "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "json", "javascript", "javascriptreact", "html"],
+  "languageserver": {
+    "flow": {
+      "command": "flow",
+      "args": ["lsp"],
+      "filetypes": ["javascript", "javascriptreact"],
+      "initializationOptions": {},
+      "requireRootPattern": true,
+      "settings": {},
+      "rootPatterns": [".flowconfig"]
+    }
+  }
 }
