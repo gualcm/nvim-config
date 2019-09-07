@@ -6,9 +6,11 @@ set shiftwidth=2
 set softtabstop=2
 set ignorecase
 set smartcase
+set mouse=nv
 set number
 set expandtab
 set updatetime=200
+autocmd BufEnter * :syntax sync fromstart
 
 " ***************** BINDINGS ********************
 let mapleader = "\<Space>"
@@ -26,6 +28,10 @@ nnoremap <Leader>2 2gt
 nnoremap <Leader>3 3gt
 nnoremap <Leader>4 4gt
 nnoremap <Leader>5 5gt
+nnoremap <Leader>6 6gt
+nnoremap <Leader>7 7gt
+nnoremap <Leader>8 8gt
+nnoremap <Leader>9 9gt
 " split navigation
 nnoremap <C-j> <C-W><C-j>
 nnoremap <C-h> <C-W><C-h>
@@ -57,8 +63,12 @@ nnoremap <Leader>tr :NERDTreeToggle<CR>
 nnoremap <Leader>fr :NERDTreeFind<CR>
 " ctrlp
 nnoremap <C-b> :CtrlPBuffer<CR>
+nnoremap %/ :Ag!<space>
 
 " ***************** PLUGINS ********************
+" " vim-closetag
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.js,*.jsx,*.tsx"
+
 let g:coc_global_extensions = ['coc-css', 'coc-html', 'coc-yank', 'coc-eslint', 'coc-prettier']
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -73,7 +83,7 @@ let g:NERDTreeIgnore=['node_modules$[[dir]]']
 
 " ctrlp
 let g:ctrlp_by_filename=1
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_custom_ignore = 'ios\|android\|node_modules\|DS_Store\|git'
 " silver searcher
 let g:ag_working_path_mode="r"
 
