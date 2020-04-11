@@ -1,6 +1,7 @@
 source $HOME/.config/nvim/searchblink.vim
 
 " ************** NVIM SETTINGS ******************
+set termguicolors
 set hidden
 set shiftwidth=2
 set softtabstop=2
@@ -14,11 +15,17 @@ autocmd BufEnter * :syntax sync fromstart
 
 " ***************** BINDINGS ********************
 let mapleader = "\<Space>"
+" back beginning of change when using .
+nmap . .`[
+" apply . to visual block
+vnoremap <silent> . :normal .<CR>
 " we dumb
+command Vs vs
 command WQ wq
 command Wq wq
 command W w
 command Q q
+command Bd bd
 map <leader>c "*y
 " tab navigation
 nnoremap <Leader>tn :tabnext<CR>
@@ -66,10 +73,11 @@ nnoremap <C-b> :CtrlPBuffer<CR>
 nnoremap %/ :Ag!<space>
 
 " ***************** PLUGINS ********************
-" " vim-closetag
+" vim-closetag
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.js,*.jsx,*.tsx"
 
-let g:coc_global_extensions = ['coc-css', 'coc-html', 'coc-yank', 'coc-eslint', 'coc-prettier']
+" coc
+let g:coc_global_extensions = ['coc-omnisharp', 'coc-highlight', 'coc-json', 'coc-flow', 'coc-css', 'coc-html', 'coc-yank', 'coc-eslint', 'coc-prettier', 'coc-tsserver']
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -82,14 +90,16 @@ endfunction
 let g:NERDTreeIgnore=['node_modules$[[dir]]']
 
 " ctrlp
-let g:ctrlp_by_filename=1
+" let g:ctrlp_by_filename=1
 let g:ctrlp_custom_ignore = 'ios\|android\|node_modules\|DS_Store\|git'
+let g:ctrlp_working_path_mode = 0
+
 " silver searcher
 let g:ag_working_path_mode="r"
 
 " plug
 call plug#begin('~/.config/nvim/plugged')
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app & yarn install'}
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'sheerun/vim-polyglot'
 Plug 'alvan/vim-closetag'
@@ -104,3 +114,5 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
+
+hi CocFloating  guibg=#ffffff
