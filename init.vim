@@ -115,5 +115,5 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
-colorscheme potpourri-contrast
+colorscheme vaporgual
 hi CocFloating  guibg=#302E33
