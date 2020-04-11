@@ -51,11 +51,11 @@ hi DiffText    guibg=#884444  guifg=fg     ctermbg=4 ctermfg=fg
 hi Comment    guifg=#696363  gui=none    ctermbg=8   ctermfg=7
 
 hi Constant        guifg=white        ctermbg=8   ctermfg=15
-hi String          guifg=#B866FA    ctermbg=bg  ctermfg=14
+hi String          guifg=#dc7cfc    ctermbg=bg  ctermfg=14
 hi Character       guifg=#FF4A80      ctermbg=bg  ctermfg=14
-hi Number          guifg=#C84FF0      ctermbg=1   ctermfg=15
-hi Boolean         guifg=#C84FF0  gui=none    ctermbg=1   ctermfg=15
-hi Float           guifg=#C84FF0      ctermbg=1   ctermfg=15
+hi Number          guifg=#dc7cfc      ctermbg=1   ctermfg=15
+hi Boolean         guifg=#dc7cfc  gui=none    ctermbg=1   ctermfg=15
+hi Float           guifg=#dc7cfc      ctermbg=1   ctermfg=15
 
 hi Identifier      guifg=#ffcc99      ctermbg=bg  ctermfg=12
 " hi Identifier      guifg=#F8F8F2      ctermbg=bg  ctermfg=12
