@@ -117,6 +117,3 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
 colorscheme color
-hi CocFloating  guibg=#302E33
-hi CocWarningHighlight guifg=#ff922b gui=underline
-hi Pmenu guibg=#ffcc99 guifg=black

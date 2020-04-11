@@ -16,9 +16,10 @@ syntax reset
 
 hi Cursor      guibg=#cc4455  guifg=white     ctermbg=4 ctermfg=15
 hi link CursorIM Cursor
-hi Normal      guibg=#0d0c0c  guifg=#F8F8F2    gui=none ctermbg=0 ctermfg=15
+hi Normal      guifg=#F8F8F2    gui=none ctermbg=0 ctermfg=15
 hi NonText       guifg=#F8F8F2   ctermbg=8 ctermfg=14
-hi Visual      guibg=#557799  guifg=white    gui=none ctermbg=9 ctermfg=15
+" hi Visual      guibg=#494a29  guifg=white    gui=none ctermbg=9 ctermfg=15
+hi Visual      guibg=#494a29  gui=none ctermbg=9 ctermfg=15
 
 hi Linenr             guifg=#aaaaaa  gui=none ctermbg=bg ctermfg=7
 
@@ -68,6 +69,7 @@ hi Operator        guifg=#ED1153      ctermbg=6   ctermfg=15
 hi Keyword         guifg=#ED1153      ctermbg=bg  ctermfg=10
 hi Exception       guifg=#ED1153      ctermbg=bg  ctermfg=10
 
+
 hi PreProc       guifg=#ffcc99   ctermbg=4  ctermfg=14
 hi Include       guifg=#C491C4   ctermbg=bg ctermfg=10
 hi link Define    Include
@@ -92,6 +94,12 @@ hi Title      guifg=#F8F8F2        ctermbg=1   ctermfg=15
 hi Ignore          guifg=#cccccc    ctermbg=bg  ctermfg=8
 hi Error    guibg=#ff0000  guifg=white        ctermbg=12  ctermfg=15
 hi Todo     guibg=#556677  guifg=#ff0000      ctermbg=1   ctermfg=12
+
+hi CocFloating  guibg=#302E33
+hi CocWarningHighlight guifg=#ff922b gui=underline
+hi Pmenu guibg=#ffcc99 guifg=black
+hi CursorLine      guibg=#363636
+hi NERDTreeUp      guifg=#f7ff00
 
 hi htmlH2  guifg=fg  ctermbg=8 ctermfg=fg
 hi link htmlH3 htmlH2
