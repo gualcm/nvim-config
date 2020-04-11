@@ -22,7 +22,7 @@ hi Visual      guibg=#557799  guifg=white    gui=none ctermbg=9 ctermfg=15
 
 hi Linenr             guifg=#aaaaaa  gui=none ctermbg=bg ctermfg=7
 
-hi Directory          guifg=#337700  gui=none ctermbg=bg ctermfg=10
+hi Directory          guifg=#ED1153  gui=bold ctermbg=bg ctermfg=10
 
 hi IncSearch   guibg=#0066cc  guifg=white    gui=none ctermbg=1 ctermfg=15
 hi link Seach IncSearch
@@ -103,4 +103,3 @@ hi link htmlH6 htmlH5
 
 let g:colors_name = "Vaporgual"
 let colors_name   = "Vaporgual"
-

@@ -97,6 +97,7 @@ let g:ctrlp_working_path_mode = 0
 " silver searcher
 let g:ag_working_path_mode="r"
 
+
 " plug
 call plug#begin('~/.config/nvim/plugged')
 Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app & yarn install'}
@@ -115,5 +116,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
-colorscheme vaporgual
+colorscheme color
 hi CocFloating  guibg=#302E33
+hi CocWarningHighlight guifg=#ff922b gui=underline
+hi Pmenu guibg=#ffcc99 guifg=black
