@@ -23,7 +23,7 @@ hi Visual      guibg=#494a29  gui=none ctermbg=9 ctermfg=15
 
 hi Linenr             guifg=#aaaaaa  gui=none ctermbg=bg ctermfg=7
 
-hi Directory          guifg=#ED1153  gui=bold ctermbg=bg ctermfg=10
+hi Directory          guifg=#FF4A80  gui=bold ctermbg=bg ctermfg=10
 
 hi IncSearch   guibg=#0066cc  guifg=white    gui=none ctermbg=1 ctermfg=15
 hi link Seach IncSearch
@@ -52,22 +52,22 @@ hi Comment    guifg=#696363  gui=none    ctermbg=8   ctermfg=7
 
 hi Constant        guifg=white        ctermbg=8   ctermfg=15
 hi String          guifg=#B866FA    ctermbg=bg  ctermfg=14
-hi Character       guifg=#ED1153      ctermbg=bg  ctermfg=14
+hi Character       guifg=#FF4A80      ctermbg=bg  ctermfg=14
 hi Number          guifg=#C84FF0      ctermbg=1   ctermfg=15
 hi Boolean         guifg=#C84FF0  gui=none    ctermbg=1   ctermfg=15
 hi Float           guifg=#C84FF0      ctermbg=1   ctermfg=15
 
 hi Identifier      guifg=#ffcc99      ctermbg=bg  ctermfg=12
 " hi Identifier      guifg=#F8F8F2      ctermbg=bg  ctermfg=12
-hi Function        guifg=#ED1153      ctermbg=bg  ctermfg=12
-hi Statement       guifg=#ED1153      ctermbg=bg  ctermfg=14
+hi Function        guifg=#FF4A80      ctermbg=bg  ctermfg=12
+hi Statement       guifg=#FF4A80      ctermbg=bg  ctermfg=14
 
-hi Conditional     guifg=#ED1153      ctermbg=bg  ctermfg=12
-hi Repeat          guifg=#ED1153      ctermbg=4   ctermfg=14
+hi Conditional     guifg=#FF4A80      ctermbg=bg  ctermfg=12
+hi Repeat          guifg=#FF4A80      ctermbg=4   ctermfg=14
 hi Label           guifg=#ffccff      ctermbg=bg   ctermfg=13
-hi Operator        guifg=#ED1153      ctermbg=6   ctermfg=15
-hi Keyword         guifg=#ED1153      ctermbg=bg  ctermfg=10
-hi Exception       guifg=#ED1153      ctermbg=bg  ctermfg=10
+hi Operator        guifg=#FF4A80      ctermbg=6   ctermfg=15
+hi Keyword         guifg=#FF4A80      ctermbg=bg  ctermfg=10
+hi Exception       guifg=#FF4A80      ctermbg=bg  ctermfg=10
 
 
 hi PreProc       guifg=#ffcc99   ctermbg=4  ctermfg=14
@@ -77,7 +77,7 @@ hi link Macro     Include
 hi link PreCondit Include
 
 hi Type          guifg=#C491C4      ctermbg=bg  ctermfg=12
-hi StorageClass      guifg=#ED1153      ctermbg=bg  ctermfg=10
+hi StorageClass      guifg=#FF4A80      ctermbg=bg  ctermfg=10
 hi Structure         guifg=#F8F8F2      ctermbg=bg  ctermfg=10
 hi Typedef       guifg=#C491C4    ctermbg=bg  ctermfg=10
 
